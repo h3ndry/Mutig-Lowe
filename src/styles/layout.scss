@@ -1,0 +1,155 @@
+// NOTE: Variables
+
+//Colors
+$primary-color: #E5FCFF;
+$accent-1: #C3161C;
+$accent-color-2: #233567;
+$black-color: #000;
+$white-color: #fff;
+$gray-color: #DEDEDE;
+
+//Font Family
+$heading-font: 'Playfair Display', serif;
+$text-font: 'Poppins', sans-serif;
+
+//NOTE: Media query
+@mixin layoutMediaQuery() {
+  width: 90%;
+  
+  @media ( min-width: 1280px ) and (max-width: 1350px ) {
+    max-width: 85%;
+  }
+  @media ( min-width: 1350px ) {
+    max-width: 1300px;
+  }
+
+
+}
+
+
+*,
+*:before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $text-font;
+    @media ( max-width: 870px ) {
+    font-size: 90%;
+  }
+}
+img {
+  height: 100%;
+}
+
+body {
+  font-size: 0.875rem;
+
+}
+
+//Typography
+
+h1 {
+  font-size: 3.25rem;
+  font-family: $heading-font;
+  color: $accent-color-2;
+  margin-bottom: 2rem;
+  span {
+    color: $accent-1
+  }
+
+  @media (max-width: 706px) {
+    font-size: 2.25rem;
+  }
+
+  @media (max-width: 370px) {
+    font-size: 1.825rem;
+  }
+
+  
+}
+
+.navigation {
+  background: $primary-color;
+  margin-bottom: .45rem;
+  margin-bottom: 0;
+  z-index: 0;
+  position: relative;
+  min-width: 320px;
+ 
+  .inner-nav {
+    @include layoutMediaQuery();
+    margin: 0 auto;
+    padding: .45rem .0875rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-logo {
+      height: 5.5em;
+      z-index: 3;
+    }
+
+    .left-content {
+      display: flex;
+      align-items: center;
+      a {
+        color: $black-color;
+        text-decoration: none;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+      }
+      .btn-chat {
+        margin-left: 3rem;
+        text-transform: capitalize;
+        border: 2px solid $accent-1;
+        border-radius: 10rem;
+        padding: .5rem 1rem;
+        transition: all .3s;
+        transform: scale(.95);
+        &:hover {
+          transform: scale(1);
+        }
+
+      }
+
+      @media ( max-width: 600px ) {
+           display: none;
+         }
+    }
+  }
+  .balloon {
+    position: absolute;
+    height: 24rem;
+    width: 25rem;
+    top: -9rem;
+    left: -14rem;
+    z-index: 0;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@import './chat-room.scss', './banner.scss',
+'./body-content.scss';
+
+footer {
+  height: 6rem;
+  background:  $black-color;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  div {
+  
+    text-align: center;
+    color: $gray-color;
+    a {
+      text-decoration: none;
+      color: currentColor;
+    }
+  }
+}

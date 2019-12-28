@@ -1,0 +1,68 @@
+
+
+
+.body-content {
+  @include layoutMediaQuery();
+  color: $accent-color-2;
+  padding: 9rem 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(20rem, 50%));
+    @media ( max-width: 870px ) {
+      grid-template-columns:  minmax(20rem, 100%); 
+      grid-row-gap: 5.5rem;  
+    }
+  
+  
+
+  .content-left {
+    width: 80%;
+
+    p {
+      width: 65%;
+      font-size: .875rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: $accent-color-2;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      color: $accent-color-2;
+      font-size: .875rem;
+      text-transform: capitalize;
+      background: none;
+      border: none;
+      cursor: pointer;
+      
+      svg {
+        margin-left: 1.5rem;
+      }
+
+    }
+  }
+
+  .content-right {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10rem,50%));
+    grid-gap: 5.5rem;
+    @media ( max-width: 870px ) {
+      grid-gap: 2rem;
+    }
+   
+
+    .card {
+      
+    &-icon {
+      margin-bottom: 1rem;
+      svg:nth-child(2) {
+        transform: translateX(-1rem);
+      }
+    }
+
+    &-tittle {
+      margin-bottom: 1rem;
+    }
+    }
+  }
+}

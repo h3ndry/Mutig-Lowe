@@ -1,0 +1,148 @@
+.banner-container {
+  background-color: $primary-color;
+  position: relative;
+  min-width: 320px;
+  min-height: 20em;
+  overflow: hidden;
+
+  .banner-additiona-bg {
+    background: $accent-color-2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 11;
+  }
+  
+  .inner-banner {
+    @include layoutMediaQuery();
+    position: relative;
+    margin: 0 auto;
+    min-height: 35em;
+    
+    .content {
+      position: relative;
+      width: 70%;
+      transform: translateY(4rem);
+      z-index: 10;
+      @media ( max-width: 870px ){
+        width: 100%;
+      }
+     
+      div {
+        z-index: 10;
+      }
+      p {
+        width: 65%;
+        font-weight: 300;
+        letter-spacing: 1px;
+        color: $accent-color-2;
+        margin-bottom: 2rem;
+        @media ( max-width: 870px ){
+        width: 100%;
+        font-size: .875rem;
+      }
+      }
+      button {
+        width: 10rem;
+        height: 3rem;
+        color: $white-color;
+        background-color: $accent-1;
+        border: none;
+        border-radius: 10rem;
+        font-family: $text-font;
+        letter-spacing: 1px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-transform: capitalize;
+        transition: all .3s;
+        cursor: pointer;
+        transform: scale(.95);
+
+        &:hover {
+          transform: scale(1);
+        }
+      }
+
+    }
+    .images {
+      position: absolute;
+      z-index: 2;
+      height: 25em;
+      top: 0;
+      right: 0;
+
+    }
+    
+
+
+    a {
+      cursor: pointer;
+    }
+    .video-link {
+      position: absolute;
+      cursor: pointer;
+      width: 12rem;
+      height: 4rem;
+      bottom: 0px;
+      background: $white-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      color: $accent-color-2;
+    
+      svg {
+        margin-right: .625rem;
+        cursor: pointer;
+      }
+      
+    }
+
+  }
+  .balloons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+
+    div {
+      position: absolute;
+      &:nth-child(1){
+        top: -20%;
+        transform: scale(.7);
+        left: -5%;
+        opacity: .5;
+      }
+        &:nth-child(2){
+        left: 18%;
+        bottom: 15%;
+      }
+
+        &:nth-child(3){
+        right: 15%;
+        bottom: 10%;
+      }
+    }
+  }
+
+  @media ( max-width: 870px ) {
+    
+    .images {
+      opacity: 0.2;
+      height: 10em;
+      top: 0;
+      // left: 0;
+      // bottom: 0;
+      right: 0;
+      
+    }
+     .balloons {
+       display: none;
+     }
+  }
+}

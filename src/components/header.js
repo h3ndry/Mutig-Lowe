@@ -2,31 +2,26 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import Logo from '../images/logo.svg'
+import Balloon from '../images/balloon.svg'
+
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+  <header className='navigation'>
+    <div className='inner-nav'>
+      <div className="nav-logo">
+        <Link to="/">
+          <img src={Logo} alt="Company logo" />
         </Link>
-      </h1>
+      </div>
+      <div className="left-content">
+        <Link to="/login"> Log in </Link>
+        <div className="btn-chat">
+          <Link to="/chat-room"> Join chat room</Link>
+        </div>
+      </div>
+    </div>
+    <div className="balloon">
+      <img src={Balloon} alt="" />
     </div>
   </header>
 )
