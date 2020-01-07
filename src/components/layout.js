@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
         <div>
           © {new Date().getFullYear()}, Mutig Lowe built by
           {` `}
-          <a href="https://www.simangah.org">Henkho Dryza</a>
+          <a href="https://www.simangah .org">Henkho Dryza</a>
         </div>
       </footer>
 

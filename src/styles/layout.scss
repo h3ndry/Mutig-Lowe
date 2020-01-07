@@ -76,6 +76,7 @@ h1 {
   background: $primary-color;
   margin-bottom: .45rem;
   margin-bottom: 0;
+  // overflow: hidden;
   z-index: 0;
   position: relative;
   min-width: 320px;
@@ -87,6 +88,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     .nav-logo {
       height: 5.5em;
@@ -95,7 +97,7 @@ h1 {
 
     .left-content {
       display: flex;
-      align-items: center;
+      // align-items: center;
       a {
         color: $black-color;
         text-decoration: none;
@@ -116,10 +118,65 @@ h1 {
 
       }
 
-      @media ( max-width: 600px ) {
-           display: none;
-         }
+      @media ( max-width: 800px ) {
+        // display: none;
+        position: absolute;
+        flex-direction: column;
+        right: 0;
+        width: 50%;
+        background-color: rgba(white,.6);
+        z-index: 20;
+        height: 20rem;
+        height: 20rem;
+      }
     }
+
+  .icon-menu {
+
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    display: none;
+    transition: .3s ease-in-out;
+
+  & span {
+    position: absolute;
+    height: .35rem;
+    border-radius: .5rem;
+    width: 100%;
+    background-color: #3d4146;
+    top: 0;
+    transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+  }
+
+  & span:nth-child(1) {
+    top: .3rem;
+  }
+  & span:nth-child(3),
+  & span:nth-child(2) {
+    top: 1.1rem;
+  }
+
+  & span:nth-child(4) {
+    top: 1.9rem;
+  }
+  
+  &__active span:nth-child(4),
+  &__active span:nth-child(1){
+    opacity: 0;
+  }
+
+  &__active span:nth-child(3){
+    transform: rotate(45deg);
+  }
+
+  &__active span:nth-child(2){
+    transform: rotate(-45deg);
+  }
+  @media only screen and (max-width: 800px) {
+    display: block;
+  }
+}
   }
   .balloon {
     position: absolute;
@@ -136,6 +193,12 @@ h1 {
 
 @import './chat-room.scss', './banner.scss',
 './body-content.scss';
+
+.temp-container {
+  margin: 0 auto;
+  @include layoutMediaQuery();
+  min-height: calc(100vh - 13.4em);
+}
 
 footer {
   height: 6rem;
